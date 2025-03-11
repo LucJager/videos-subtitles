@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Reel ZapCap Tommy',
-  description: 'Reel ZapCap Tommy',
+  title: 'Subtitles App',
+  description: 'Subtitles App',
 }
 
 export default function RootLayout({

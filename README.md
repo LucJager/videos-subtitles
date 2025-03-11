@@ -1,4 +1,4 @@
-# Tommy Reel - Application de Sous-titrage Vidéo
+# Application de Sous-titrage Vidéo
 
 Cette application Next.js permet de générer automatiquement des sous-titres stylisés pour vos vidéos en utilisant l'API ZapCap.
 
@@ -20,8 +20,8 @@ Cette application Next.js permet de générer automatiquement des sous-titres st
 1. Clonez le repository :
 
 ```bash
-git clone https://github.com/votre-username/tommy-reel.git
-cd tommy-reel
+git clone git@github.com:LucJager/videos-subtitles.git
+cd videos-subtitles
 ```
 
 2. Installez les dépendances :
