@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tommy Reel - Application de Sous-titrage Vidéo
 
-## Getting Started
+Cette application Next.js permet de générer automatiquement des sous-titres stylisés pour vos vidéos en utilisant l'API ZapCap.
 
-First, run the development server:
+## Fonctionnalités
+
+- Upload de vidéos par glisser-déposer
+- Génération automatique de sous-titres en français
+- Choix parmi 10 styles de sous-titres différents
+- Téléchargement des vidéos sous-titrées individuellement ou en ZIP
+- Interface réactive et retours visuels sur la progression
+
+## Prérequis
+
+- Node.js 18+
+- pnpm 9.4.0+
+
+## Installation
+
+1. Clonez le repository :
+
+```bash
+git clone https://github.com/votre-username/tommy-reel.git
+cd tommy-reel
+```
+
+2. Installez les dépendances :
+
+```bash
+pnpm install
+```
+
+3. Créez un fichier `.env` à la racine du projet :
+
+```
+NEXT_PUBLIC_ZAPCAP_API_KEY=votre_clé_api
+```
+
+## Développement
+
+Lancez le serveur de développement :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure du Projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+├── app/
+│ ├── api/ # Routes API Next.js
+│ │ ├── upload/ # Gestion des uploads
+│ │ ├── videos/ # Endpoints vidéos
+│ │ └── task/ # Gestion des tâches
+│ ├── components/ # Composants React réutilisables
+│ └── page.tsx # Page principale
+├── public/
+│ └── uploads/ # Fichiers uploadés (gitignored)
+├── resources/
+│ ├── template-choisi.json # Liste des templates sélectionnés
+│ └── template-zapcap.json # Configuration complète des templates
+└── config/
+├── next.config.ts # Configuration Next.js
+└── tailwind.config.ts # Configuration Tailwind
+```
 
-## Learn More
+## Déploiement
 
-To learn more about Next.js, take a look at the following resources:
+L'application est optimisée pour être déployée sur Vercel. Pour déployer :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Connectez votre repository à Vercel
+2. Configurez la variable d'environnement `NEXT_PUBLIC_ZAPCAP_API_KEY`
+3. Déployez !
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Limitations
 
-## Deploy on Vercel
+- Taille maximale des fichiers : 100MB
+- Formats acceptés : MP4, MOV, AVI
+- Durée maximale : 5 minutes
+- Langue des sous-titres : Français uniquement
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Utilisées
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 15.2](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [JSZip](https://stuk.github.io/jszip/)
+
+## Licence
+
+GNU General Public License v3.0 - voir le fichier [LICENSE](LICENSE) pour plus de détails.
